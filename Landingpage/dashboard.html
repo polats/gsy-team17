@@ -1,0 +1,268 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Zapppit</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Custom Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300,500' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href="http://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet" type="text/css">
+
+
+    <!-- styles -->
+    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap/bootstrap-responsive.css" rel="stylesheet">
+    <link href="css/styler/font-awesome.min.css" rel="stylesheet">
+    <link href="css/styler/dashboard-style.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+      <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <![endif]-->
+  </head>
+  <body>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-inverse-collapse">
+            <i class="icon-reorder shaded"></i>
+          </a>
+
+            <a class="brand" href="#">
+              Zapppit
+            </a>
+
+          <div class="nav-collapse collapse navbar-inverse-collapse">
+            
+
+            <form class="navbar-search pull-left input-append" action="">
+              <input type="text" class="span3">
+              <button class="btn" type="button">
+                <i class="icon-search"></i>
+              </button>
+            </form>
+
+            <ul class="nav pull-right">
+              <li class="nav-user dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <img src="images/samples/user.png" class="nav-avatar" />
+                  <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Your Profile</a></li>
+                  <li><a href="#">Edit Profile</a></li>
+                  <li><a href="#">Account Settings</a></li>
+                  <li class="divider"></li>
+                  <li><a href="#">Sign Out</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div><!-- /.nav-collapse -->
+        </div>
+      </div><!-- /navbar-inner -->
+    </div><!-- /navbar -->
+
+
+
+    <div class="wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="span3">
+            <div class="sidebar">
+
+              <ul class="widget widget-menu unstyled">
+                
+                <li>
+                  <a href="activity.html">
+                    <i class="menu-icon icon-bullhorn"></i>
+                    My findings
+                  </a>
+                  <li class="active">
+                  <a href="index.html">
+                    <i class="menu-icon icon-dashboard"></i>
+                    Shares
+                  </a>
+                </li>
+                </li>
+              </ul><!--/.widget-nav-->
+
+            </div><!--/.sidebar-->
+          </div><!--/.span3-->
+
+
+          <div class="span9">
+            <div class="content">
+
+              <div class="module message">
+
+                  <table class="table table-message">
+                    <tbody>
+                      <tr class="heading">
+                        <td class="cell-title">Task</td>
+                        <td class="cell-time align-right">Date</td>
+                      </tr>
+                      <tr class="task">
+                        <td><div class="cell-title">Web scraper open source. The Web Scraping</div><div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div></td>
+                        <td class="cell-time align-right">22:30 PM</td>
+                      </tr>
+                      <tr class="task">
+                        <td><div class="cell-title">The Scott Herman Show</div><div>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div></td>
+                        <td class="cell-time align-right">Yesterday</td>
+                      </tr>
+                      <tr class="task">
+                        <td><div class="cell-title">Web scraper open source. The Web Scraping</div><div>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</div></td>
+                        <td class="cell-time align-right">Today</td>
+                      </tr>
+                      <tr class="task">
+                        <td><div class="cell-title">Introduction of Data Science</div><div>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id.</div></td>
+                        <td class="cell-time align-right">Tomorrow</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                <div class="module-foot">
+                </div>
+              </div>
+
+
+              <div class="module"><div class="module-head"><h3>Chart - flot</h3></div><div class="module-body">
+                  <div class="chart inline-legend grid">
+                    <div id="placeholder2" class="graph" style="height: 500px"></div>
+                  </div>
+              </div></div><!--/.module-->
+
+            </div><!--/.content-->
+          </div><!--/.span9-->
+        </div>
+      </div><!--/.container-->
+    </div><!--/.wrapper-->
+
+    <div class="footer">
+      <div class="container">
+        <ul class="nav pull-right">
+          <li><a href="#">
+            Like us on Facebook
+          </a></li>
+          <li><a href="#">
+            Follow us on Twitter
+          </a></li>
+        </ul>
+
+        <b class="copyright">&copy; 2013 Zapppit</b> All rights reserved.
+      </div>
+    </div>
+
+    <!-- SCRIPTS: BASE -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui-1.10.1.custom.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- SCRIPTS: FLOT  -->
+    <script src="js/jquery.flot.js"></script>
+    <script src="js/jquery.flot.resize.js"></script>
+
+
+    <!-- SCRIPTS: FLOT GRAPH ADVANCE -->
+    <script type="text/javascript">
+    $(function () {
+      var d1 = [ [0, 1], [1, 14], [2, 5], [3, 4], [4, 5], [5, 1], [6, 14], [7, 5],  [8, 5] ];
+      var d2 = [ [0, 5], [1, 2], [2, 10], [3, 1], [4, 9],  [5, 5], [6, 2], [7, 10], [8, 8] ];
+
+      var plot = $.plot($("#placeholder2"),
+           [ { data: d1, label: "Data Y"}, { data: d2, label: "Data X" } ], {
+            lines: {
+              show: true,
+              fill: true, /*SWITCHED*/
+              lineWidth: 2
+            },
+            points: {
+              show: true,
+              lineWidth: 5
+            },
+            grid: {
+              clickable: true,
+              hoverable: true,
+              autoHighlight: true,
+              mouseActiveRadius: 10,
+              aboveData: true,
+              backgroundColor: "#fafafa",
+              borderWidth: 0,
+              minBorderMargin: 25,
+            },
+            colors: [ "#090", "#099",  "#609", "#900"],
+            shadowSize: 0
+           });
+
+      function showTooltip(x, y, contents) {
+        $('<div id="gridtip">' + contents + '</div>').css( {
+          position: 'absolute',
+          display: 'none',
+          top: y + 5,
+          left: x + 5
+        }).appendTo("body").fadeIn(300);
+      }
+
+      var previousPoint = null;
+      $("#placeholder2").bind("plothover", function (event, pos, item) {
+        $("#x").text(pos.x.toFixed(2));
+        $("#y").text(pos.y.toFixed(2));
+
+        if (item) {
+          if (previousPoint != item.dataIndex) {
+            previousPoint = item.dataIndex;
+
+            $("#gridtip").remove();
+            var x = item.datapoint[0].toFixed(0),
+              y = item.datapoint[1].toFixed(0);
+
+            showTooltip(item.pageX, item.pageY,
+                  "x : " + x + "&nbsp;&nbsp;&nbsp; y : " + y);
+          }
+        }
+        else {
+          $("#gridtip").remove();
+          previousPoint = null;
+        }
+      });
+    });
+    </script>
+
+    <!-- SCRIPTS: DATATABLES -->
+    <script src="js/jquery.dataTables.js"></script>
+    <script>
+      $(document).ready(function() {
+        $('.datatable-1').dataTable();
+        $('.dataTables_paginate').addClass("btn-group datatable-pagination");
+        $('.dataTables_paginate > a').wrapInner('<span />');
+        $('.dataTables_paginate > a:first-child').append('<i class="icon-chevron-left shaded"></i>');
+        $('.dataTables_paginate > a:last-child').append('<i class="icon-chevron-right shaded"></i>');
+      } );
+    </script>
+    <script>
+    $(function() {
+      $( ".slider-range" ).slider({
+        range: true,
+        min: 0,
+        max: 20000,
+        values: [ 3000, 12000 ],
+        // $(this).find('.ui-slider-handle:first-child').addClass("first-handle");
+        // slide: function( event, ui ) {
+        //  $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+      //    }
+      //
+        slide: function(event, ui) {
+          $(this).find('.ui-slider-handle').attr("title", ui.value);
+        },
+      });
+      $( "#amount" ).val( "$" + $( ".slider-range" ).slider( "values", 0 ) + " - $" + $( ".slider-range" ).slider( "values", 1 ) );
+
+    });
+    </script>
+
+  </body>
+</html>
