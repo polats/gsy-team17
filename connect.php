@@ -2,7 +2,7 @@
 
 $db_host		= 'localhost';
 $db_user		= 'root';
-$db_pass		= 'hu';
+$db_pass		= 'root';
 $db_database	= 'gsy'; 
 
 $link = mysql_connect($db_host,$db_user,$db_pass);

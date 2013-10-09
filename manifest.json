@@ -1,0 +1,15 @@
+{
+  "manifest_version": 2,
+
+  "name": "Reading Recap",
+  "description": "Turning Reading Frustrations Into Joy",
+  "version": "0.0.1",
+
+  "permissions": [
+    "https://secure.flickr.com/"
+  ],
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  }
+}
