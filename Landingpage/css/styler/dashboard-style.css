@@ -1111,6 +1111,9 @@ body [class^="icon-"], body [class*=" icon-"] {
     color:#075290;
     font-size: +1;
 }
+.message .table-message tbody tr.task .cell-title .task-address {
+    display:inline;
+}
 .message .table-message tbody tr.task.resolved td {
     background: #f5f5f5;
     color: #999;
