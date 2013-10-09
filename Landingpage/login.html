@@ -1,0 +1,208 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Zapppit</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Custom Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300,500' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href="http://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet" type="text/css">
+
+
+    <!-- styles -->
+    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap/bootstrap-responsive.css" rel="stylesheet">
+    <link href="css/styler/font-awesome.min.css" rel="stylesheet">
+    <link href="css/styler/dashboard-style.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+      <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <![endif]-->
+  </head>
+  <body>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-inverse-collapse">
+            <i class="icon-reorder shaded"></i>
+          </a>
+
+            <a class="brand" href="#">
+              Zapppit
+            </a>
+
+          <div class="nav-collapse collapse navbar-inverse-collapse">
+
+        </div>
+      </div><!-- /navbar-inner -->
+    </div><!-- /navbar -->
+
+
+
+    <div class="wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="module module-login span4 offset4">
+            <form class="form-vertical">
+              <div class="module-head">
+                <h3>Sign In</h3>
+              </div>
+              <div class="module-body">
+                <div class="control-group">
+                  <div class="controls row-fluid">
+                    <input class="span12" type="text" id="inputEmail" placeholder="Username">
+                  </div>
+                </div>
+                <div class="control-group">
+                  <div class="controls row-fluid">
+                    <input class="span12" type="password" id="inputPassword" placeholder="Password">
+                  </div>
+                </div>
+              </div>
+              <div class="module-foot">
+                <div class="control-group">
+                  <div class="controls clearfix">
+                    <button type="submit" class="btn btn-primary pull-right">Login</button>
+                    <label class="checkbox">
+                      <input type="checkbox"> Remember me
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div><!--/.wrapper-->
+
+
+    <div class="footer">
+      <div class="container">
+        <ul class="nav pull-right">
+          <li><a href="#">
+            Like us on Facebook
+          </a></li>
+          <li><a href="#">
+            Follow us on Twitter
+          </a></li>
+        </ul>
+
+        <b class="copyright">&copy; 2013 Zapppit</b> All rights reserved.
+      </div>
+    </div>
+
+    <!-- SCRIPTS: BASE -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui-1.10.1.custom.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- SCRIPTS: FLOT  -->
+    <script src="js/jquery.flot.js"></script>
+    <script src="js/jquery.flot.resize.js"></script>
+
+
+    <!-- SCRIPTS: FLOT GRAPH ADVANCE -->
+    <script type="text/javascript">
+    $(function () {
+      var d1 = [ [0, 1], [1, 14], [2, 5], [3, 4], [4, 5], [5, 1], [6, 14], [7, 5],  [8, 5] ];
+      var d2 = [ [0, 5], [1, 2], [2, 10], [3, 1], [4, 9],  [5, 5], [6, 2], [7, 10], [8, 8] ];
+
+      var plot = $.plot($("#placeholder2"),
+           [ { data: d1, label: "Data Y"}, { data: d2, label: "Data X" } ], {
+            lines: {
+              show: true,
+              fill: true, /*SWITCHED*/
+              lineWidth: 2
+            },
+            points: {
+              show: true,
+              lineWidth: 5
+            },
+            grid: {
+              clickable: true,
+              hoverable: true,
+              autoHighlight: true,
+              mouseActiveRadius: 10,
+              aboveData: true,
+              backgroundColor: "#fafafa",
+              borderWidth: 0,
+              minBorderMargin: 25,
+            },
+            colors: [ "#090", "#099",  "#609", "#900"],
+            shadowSize: 0
+           });
+
+      function showTooltip(x, y, contents) {
+        $('<div id="gridtip">' + contents + '</div>').css( {
+          position: 'absolute',
+          display: 'none',
+          top: y + 5,
+          left: x + 5
+        }).appendTo("body").fadeIn(300);
+      }
+
+      var previousPoint = null;
+      $("#placeholder2").bind("plothover", function (event, pos, item) {
+        $("#x").text(pos.x.toFixed(2));
+        $("#y").text(pos.y.toFixed(2));
+
+        if (item) {
+          if (previousPoint != item.dataIndex) {
+            previousPoint = item.dataIndex;
+
+            $("#gridtip").remove();
+            var x = item.datapoint[0].toFixed(0),
+              y = item.datapoint[1].toFixed(0);
+
+            showTooltip(item.pageX, item.pageY,
+                  "x : " + x + "&nbsp;&nbsp;&nbsp; y : " + y);
+          }
+        }
+        else {
+          $("#gridtip").remove();
+          previousPoint = null;
+        }
+      });
+    });
+    </script>
+
+    <!-- SCRIPTS: DATATABLES -->
+    <script src="js/jquery.dataTables.js"></script>
+    <script>
+      $(document).ready(function() {
+        $('.datatable-1').dataTable();
+        $('.dataTables_paginate').addClass("btn-group datatable-pagination");
+        $('.dataTables_paginate > a').wrapInner('<span />');
+        $('.dataTables_paginate > a:first-child').append('<i class="icon-chevron-left shaded"></i>');
+        $('.dataTables_paginate > a:last-child').append('<i class="icon-chevron-right shaded"></i>');
+      } );
+    </script>
+    <script>
+    $(function() {
+      $( ".slider-range" ).slider({
+        range: true,
+        min: 0,
+        max: 20000,
+        values: [ 3000, 12000 ],
+        // $(this).find('.ui-slider-handle:first-child').addClass("first-handle");
+        // slide: function( event, ui ) {
+        //  $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+      //    }
+      //
+        slide: function(event, ui) {
+          $(this).find('.ui-slider-handle').attr("title", ui.value);
+        },
+      });
+      $( "#amount" ).val( "$" + $( ".slider-range" ).slider( "values", 0 ) + " - $" + $( ".slider-range" ).slider( "values", 1 ) );
+
+    });
+    </script>
+
+  </body>
+</html>
