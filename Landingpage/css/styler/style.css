@@ -393,6 +393,9 @@ body > footer ul.nav {
   color: rgba(0, 0, 0, 0.5);
   font-weight: 400;
 }
+.features img {
+  border:1px solid #999;
+}
 .features .heading {
   margin-bottom: 20px;
 }
